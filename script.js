@@ -21,7 +21,7 @@ form.addEventListener('submit', (e) => {
                 p3.innerText = 'Correct answer is smaller.';
             } else if (input == ans) {
                 end();
-                p2.innerText = 'You win!';
+                p3.innerText = 'You win!';
             } else {
                 p3.innerText = `Input is out of the range. Enter an integer number between ${min} to ${max}.`;
             }
@@ -29,9 +29,10 @@ form.addEventListener('submit', (e) => {
     } else if (i == 1) {
         end();
         if (input == ans) {
-            p2.innerText = 'You win!';
+            p3.innerText = 'You win!';
         } else {
-            p2.innerText = 'You lose!';
+            p2.innerText = `Correct answer is ${ans}`;
+            p3.innerText = 'You lose!';
         }
     }
     e.preventDefault();
@@ -39,6 +40,6 @@ form.addEventListener('submit', (e) => {
 
 function end() {
     p1.innerText = '';
-    p3.innerText = '';
+    p2.innerText = '';
     form.innerHTML = `<button onclick='location.reload()'>Restart</button>`;
 }
