@@ -20,26 +20,27 @@ form.addEventListener('submit', (e) => {
             } else if (max >= input && input > ans) {
                 p3.innerText = 'Correct answer is smaller.';
             } else if (input == ans) {
-                end();
-                p3.innerText = 'You win!';
+                win(true);
             } else {
                 p3.innerText = `Input is out of the range. Enter an integer number between ${min} to ${max}.`;
             }
         }
-    } else if (i == 1) {
-        end();
-        if (input == ans) {
-            p3.innerText = 'You win!';
-        } else {
-            p2.innerText = `Correct answer is ${ans}`;
-            p3.innerText = 'You lose!';
-        }
+    } else {
+        win(input == ans);
     }
     e.preventDefault();
 })
 
-function end() {
+function win(win) {
     p1.innerText = '';
-    p2.innerText = '';
     form.innerHTML = `<button onclick='location.reload()'>Restart</button>`;
+    if (win) {
+        p2.innerText = '';
+        p3.setAttribute('style', 'color: green');
+        p3.innerText = 'You win!';
+    } else {
+        p2.innerText = `Correct answer is ${ans}`;
+        p3.setAttribute('style', 'color: red');
+        p3.innerText = 'You lose!';
+    }
 }
