@@ -36,11 +36,11 @@ function win(win) {
     form.innerHTML = `<button onclick='location.reload()'>Restart</button>`;
     if (win) {
         p2.innerText = '';
-        p3.setAttribute('style', 'color: green');
+        p3.setAttribute('style', 'color: green; font-size: xx-large');
         p3.innerText = 'You win!';
     } else {
         p2.innerText = `Correct answer is ${ans}`;
-        p3.setAttribute('style', 'color: red');
+        p3.setAttribute('style', 'color: orange; font-size: xx-large');
         p3.innerText = 'You lose!';
     }
 }
