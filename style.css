@@ -1,3 +1,9 @@
 body {
     text-align: center;
+    background: lightseagreen;
+    font-size: x-large;
+}
+button, input {
+    background: lemonchiffon;
+    font-size: larger;
 }
