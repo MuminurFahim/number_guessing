@@ -6,4 +6,5 @@ body {
 button, input {
     background: lemonchiffon;
     font-size: larger;
+    margin: 0.1em;
 }
